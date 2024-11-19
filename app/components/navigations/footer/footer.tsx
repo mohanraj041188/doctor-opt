@@ -1,5 +1,4 @@
 import { Link } from "@remix-run/react";
-import React from 'react';
 import './footer.scss';
 
 import { MailIcon, TwitterIcon, InstagramIcon } from "../../icons";

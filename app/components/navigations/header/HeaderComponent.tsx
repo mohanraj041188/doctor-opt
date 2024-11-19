@@ -1,5 +1,5 @@
 import { Link, useActionData } from "@remix-run/react";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Header.scss';
 
 import { LogoIcon } from "../../icons";
@@ -91,7 +91,7 @@ export default function HeaderComponent() {
               <p className='popup-modal__body--description'>
                 {showSignup ? (
                   <>
-                    It's quick and easy.
+                    It&apos;s quick and easy.
                   </>
                 ) : (
                   <>
@@ -116,7 +116,7 @@ export default function HeaderComponent() {
                   </>
                 ) : (
                   <>
-                    Don't have an account? <button onClick={() => handleSignup(!showSignup)}>Sign Up</button>
+                    Don&apos;t have an account? <button onClick={() => handleSignup(!showSignup)}>Sign Up</button>
                   </>
                 )}
               </p>

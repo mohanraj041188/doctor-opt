@@ -136,7 +136,7 @@ let serviceWorkerState: ServiceWorkerState = {
   registration: null,
   serviceWorkerStatus: "register",
 };
-let eventHandlers: Set<(state: ServiceWorkerState) => void> = new Set();
+const eventHandlers: Set<(state: ServiceWorkerState) => void> = new Set();
 const dispatch = (payload: ServiceWorkerActionTypes) => {
   serviceWorkerState = serviceWorkerReducer(
     serviceWorkerState,
@@ -194,7 +194,7 @@ swl.register("/sw.js", {
 export function useServiceWorker() {
   const [state, setState] = useState<ServiceWorkerState>(serviceWorkerState);
   useEffect(() => {
-    let handler = (state: ServiceWorkerState) => {
+    const handler = (state: ServiceWorkerState) => {
       setState(state);
     };
     eventHandlers.add(handler);

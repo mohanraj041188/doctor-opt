@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const AnimatedNumber = ({ targetNumber }) => {
   const [currentNumber, setCurrentNumber] = useState(0);

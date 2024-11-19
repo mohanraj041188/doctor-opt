@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from '@remix-run/react';
 
 export default function SearchResult() {
@@ -6,7 +5,7 @@ export default function SearchResult() {
 
   return (
     <div className="search-results">
-      <h2>Results for "{query}"</h2>
+      <h2>Results for {query}</h2>
       {/* Render search result details here */}
     </div>
   );
