@@ -18,12 +18,12 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  let { request } = event;
-  let url = new URL(request.url);
+  const { request } = event;
+  const url = new URL(request.url);
 
   // Check to see if we should be handling this request or if
   // it's a static asset that we can leave to the browser.
-  let matches = matchRoutes(routes, url.pathname);
+  const matches = matchRoutes(routes, url.pathname);
   if (matches && matches.length > 0) {
     event.respondWith(handler(request));
   }

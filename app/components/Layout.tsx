@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation } from '@remix-run/react';
 
 import HeaderComponent from "./navigations/header/HeaderComponent";

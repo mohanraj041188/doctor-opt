@@ -1,4 +1,3 @@
-import React from 'react';
 import './PopupModal.scss';
 
 import { LogoIcon, CloseIcon } from "../icons";

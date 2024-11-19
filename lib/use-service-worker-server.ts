@@ -10,7 +10,7 @@ export {
   SERVICE_WORKER_UPDATE_READY,
 } from "./use-service-worker-browser";
 
-let serviceWorkerState: ServiceWorkerState = {
+const serviceWorkerState: ServiceWorkerState = {
   registration: null,
   serviceWorkerStatus: "register",
 };
