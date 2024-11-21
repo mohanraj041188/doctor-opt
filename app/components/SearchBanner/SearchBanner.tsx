@@ -1,8 +1,8 @@
-import SearchBannerForm from '../SearchBannerForm/SearchBannerForm';
-import './SearchBanner.scss';
-import { SearchIcon } from '../icons';
-import Typewriter from '../TypeWritter/TypeWritter';
-import AnimatedNumber from '../AnimatedNumber/AnimatedNumber';
+import SearchBannerForm from "../SearchBannerForm/SearchBannerForm";
+import "./SearchBanner.scss";
+import { SearchIcon } from "../icons";
+import Typewriter from "../TypeWritter/TypeWritter";
+import AnimatedNumber from "../AnimatedNumber/AnimatedNumber";
 
 const specialty = [
   "Allergist",
@@ -94,12 +94,25 @@ const suggestions = [
 function SearchBanner() {
   return (
     <section className="search-banner">
-      <h1 className='search-banner__intro-text'><Typewriter cursor=" " texts={specialty} delay={100} infinite={true}></Typewriter> Appointment <br />Booking in Seconds</h1>
-      <p className='search-banner__intro-description'>Introducing the world&apos;s best search engine for Appointments.</p>
+      <h1 className="search-banner__intro-text">
+        <Typewriter
+          cursor=" "
+          texts={specialty}
+          delay={100}
+          infinite={true}
+        ></Typewriter>{" "}
+        Appointment <br />
+        Booking in Seconds
+      </h1>
+      <p className="search-banner__intro-description">
+        Introducing the world&apos;s best search engine for Appointments.
+      </p>
       <SearchBannerForm suggestions={suggestions} />
-      <div className='search-banner__note'>
-        <SearchIcon className='search-banner__note--icon'></SearchIcon>
-        <p className='search-banner__note--text'><AnimatedNumber targetNumber={81681} /> appointments and counting ...</p>
+      <div className="search-banner__note">
+        <SearchIcon className="search-banner__note--icon"></SearchIcon>
+        <p className="search-banner__note--text">
+          <AnimatedNumber targetNumber={81681} /> appointments and counting ...
+        </p>
       </div>
     </section>
   );

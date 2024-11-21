@@ -71,7 +71,7 @@ export interface ServiceWorkerState {
 
 const serviceWorkerReducer = (
   state: ServiceWorkerState,
-  action: ServiceWorkerActionTypes
+  action: ServiceWorkerActionTypes,
 ): ServiceWorkerState => {
   switch (action.type) {
     case "SERVICE_WORKER_READY":
@@ -111,7 +111,7 @@ const serviceWorkerReducer = (
       };
     case "SERVICE_WORKER_OFFLINE":
       console.log(
-        "No internet connection found. App is running in offline mode."
+        "No internet connection found. App is running in offline mode.",
       );
       return {
         ...state,
@@ -120,7 +120,7 @@ const serviceWorkerReducer = (
     case "SERVICE_WORKER_ERROR":
       console.error(
         "Error during service worker registration:",
-        action.payload.error
+        action.payload.error,
       );
       return {
         ...state,
@@ -140,7 +140,7 @@ const eventHandlers: Set<(state: ServiceWorkerState) => void> = new Set();
 const dispatch = (payload: ServiceWorkerActionTypes) => {
   serviceWorkerState = serviceWorkerReducer(
     serviceWorkerState,
-    payload as ServiceWorkerActionTypes
+    payload as ServiceWorkerActionTypes,
   );
   for (const handler of eventHandlers) {
     handler(serviceWorkerState);

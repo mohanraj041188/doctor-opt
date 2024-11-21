@@ -15,7 +15,7 @@
     align-items: center;
     gap: 20px;
 
-    &--items { 
+    &--items {
       border-width: 0;
       border-radius: 10px;
       background-color: transparent;
@@ -24,7 +24,7 @@
       color: rgba(0, 0, 0, 0.75);
 
       &-button {
-        background: linear-gradient(to bottom right,#4c4c4c,#2c2c2c);
+        background: linear-gradient(to bottom right, #4c4c4c, #2c2c2c);
         color: var(--clr-secondary);
       }
     }

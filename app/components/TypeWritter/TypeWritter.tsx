@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import "./TypeWritter.scss"
+import "./TypeWritter.scss";
 
 const Typewriter = ({ texts, delay, infinite, cursor }) => {
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
@@ -13,18 +13,18 @@ const Typewriter = ({ texts, delay, infinite, cursor }) => {
     let timeout;
     if (charIndex < texts[currentIndex].length) {
       timeout = setTimeout(() => {
-        setCurrentText(prev => prev + texts[currentIndex][charIndex]);
-        setCharIndex(prev => prev + 1);
+        setCurrentText((prev) => prev + texts[currentIndex][charIndex]);
+        setCharIndex((prev) => prev + 1);
       }, delay);
     } else if (currentIndex < texts.length - 1) {
       timeout = setTimeout(() => {
-        setCurrentText('');
+        setCurrentText("");
         setCharIndex(0);
-        setCurrentIndex(prev => prev + 1);
+        setCurrentIndex((prev) => prev + 1);
       }, delay * 20); // Delay before switching to the next word
     } else if (infinite) {
       timeout = setTimeout(() => {
-        setCurrentText('');
+        setCurrentText("");
         setCharIndex(0);
         setCurrentIndex(0);
       }, delay * 3);
