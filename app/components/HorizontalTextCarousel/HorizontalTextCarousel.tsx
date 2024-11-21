@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import './HorizontalTextCarousel.scss';
+import { useState, useEffect } from "react";
+import "./HorizontalTextCarousel.scss";
 
 const HorizontalTextCarousel = ({ items, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,7 +13,10 @@ const HorizontalTextCarousel = ({ items, interval = 3000 }) => {
 
   return (
     <div className="horizontal-text-carousel__container">
-      <div className="horizontal-text-carousel__track" style={{ transform: `translateY(-${currentIndex * 64}px)` }}>
+      <div
+        className="horizontal-text-carousel__track"
+        style={{ transform: `translateY(-${currentIndex * 64}px)` }}
+      >
         {items.map((item, index) => (
           <div className="horizontal-text-carousel__item" key={index}>
             {item}

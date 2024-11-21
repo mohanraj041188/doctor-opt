@@ -23,9 +23,7 @@ const AnimatedNumber = ({ targetNumber }) => {
   }, [targetNumber]);
 
   return (
-    <span className="animated-number">
-      {currentNumber.toLocaleString()}
-    </span>
+    <span className="animated-number">{currentNumber.toLocaleString()}</span>
   );
 };
 

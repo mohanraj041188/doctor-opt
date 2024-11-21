@@ -26,10 +26,10 @@
       background-color: transparent;
       border-color: transparent;
       cursor: pointer;
-      color: rgba(0, 0, 0,.75);
+      color: rgba(0, 0, 0, 0.75);
 
       &-button {
-        background: linear-gradient(to bottom right,#4c4c4c,#2c2c2c);
+        background: linear-gradient(to bottom right, #4c4c4c, #2c2c2c);
         color: var(--clr-secondary);
       }
     }
@@ -40,7 +40,7 @@
     background-color: #ffffff80;
     backdrop-filter: blur(1rem);
     border-radius: 1.25rem;
-    box-shadow: 0 20px 60px 0 rgba(0,0,0,.1);
+    box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.1);
     padding: 8px 32px;
     margin: 40px 5vw 0;
     .nav-link_list {
@@ -51,7 +51,7 @@
         padding: 0 20px;
       }
       &-item {
-        color: rgba(44,44,44, .8);
+        color: rgba(44, 44, 44, 0.8);
         text-decoration: none;
         font-weight: 600;
         font-size: 14px;
@@ -59,7 +59,7 @@
         position: relative;
 
         &::after {
-          content: '';
+          content: "";
           display: inline-block;
           position: absolute;
           left: 0;
@@ -71,8 +71,8 @@
           transform: scaleX(0);
           transform-origin: left;
           will-change: transform;
-          transition: transform .25s ease-in-out;
-          background-color: rgba(44,44,44, .8);
+          transition: transform 0.25s ease-in-out;
+          background-color: rgba(44, 44, 44, 0.8);
         }
 
         &:hover {

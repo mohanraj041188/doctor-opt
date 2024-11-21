@@ -1,4 +1,4 @@
-import { useLocation } from '@remix-run/react';
+import { useLocation } from "@remix-run/react";
 
 import HeaderComponent from "./navigations/header/HeaderComponent";
 import InnerHeader from "./navigations/header/InnerHeader";
@@ -6,7 +6,7 @@ import Footer from "./navigations/footer/footer";
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const isInnerPage = location.pathname !== '/';
+  const isInnerPage = location.pathname !== "/";
 
   return (
     <div>

@@ -33,7 +33,7 @@
       font-weight: 400;
       margin: 0;
       font-size: 20px;
-      color: rgba(var(--color-dark), .6);
+      color: rgba(var(--color-dark), 0.6);
       margin-top: 20px;
       padding-bottom: var(--space-base);
     }
@@ -54,7 +54,7 @@
     }
     &--text {
       margin: 0;
-      color: rgba(var(--color-dark),var(--text-opacity));
+      color: rgba(var(--color-dark), var(--text-opacity));
       font-style: normal;
       font-weight: 400;
       font-size: var(--text-base, 1rem);

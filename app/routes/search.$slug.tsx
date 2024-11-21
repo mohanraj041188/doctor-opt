@@ -1,6 +1,6 @@
-import { useParams } from '@remix-run/react';
+import { useParams } from "@remix-run/react";
 
-export async function loader( {params} : {params:any} ) {
+export async function loader({ params }: { params: any }) {
   const { slug } = params;
 
   // If needed, map the slug back to the original text

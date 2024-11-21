@@ -1,8 +1,15 @@
 import React from "react";
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "@remix-run/react";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLocation,
+} from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import BackgroundImage from './asserts/hospital-corridor.jpg';
-import InnerPageBackgroundImage from './asserts/pageBackground.jpg';
+import BackgroundImage from "./asserts/hospital-corridor.jpg";
+import InnerPageBackgroundImage from "./asserts/pageBackground.jpg";
 
 import "./styles/index.scss";
 import Layout from "./components/Layout";
@@ -22,9 +29,11 @@ export const links: LinksFunction = () => [
 
 function RootLayout() {
   const location = useLocation();
-  const isInnerPage = location.pathname !== '/';
+  const isInnerPage = location.pathname !== "/";
   const backgroundImageStyle = {
-    backgroundImage: isInnerPage ? `url(${InnerPageBackgroundImage})` : `url(${BackgroundImage})`,
+    backgroundImage: isInnerPage
+      ? `url(${InnerPageBackgroundImage})`
+      : `url(${BackgroundImage})`,
   };
 
   return (
@@ -43,7 +52,9 @@ function RootLayout() {
         </main>
         <ScrollRestoration />
         <Scripts />
-        <div className={isInnerPage ? 'background inner-background' : 'background'}>
+        <div
+          className={isInnerPage ? "background inner-background" : "background"}
+        >
           <div style={backgroundImageStyle} className="background__image" />
           <div className="background__grid"></div>
           <div className="background__blur-xl"></div>
