@@ -8,6 +8,7 @@
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "prettier": "prettier \"**/*.+(js|scss|tsx|jsx)\"",
+    "check-format": "npm run prettier -- --list-different",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
