@@ -1,13 +1,11 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
+import React from "react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import BackgroundImage from './asserts/hospital-corridor.jpg';
+import InnerPageBackgroundImage from './asserts/pageBackground.jpg';
 
-import "./tailwind.css";
+import "./styles/index.scss";
+import Layout from "./components/Layout";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -22,7 +20,13 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+function RootLayout() {
+  const location = useLocation();
+  const isInnerPage = location.pathname !== '/';
+  const backgroundImageStyle = {
+    backgroundImage: isInnerPage ? `url(${InnerPageBackgroundImage})` : `url(${BackgroundImage})`,
+  };
+
   return (
     <html lang="en">
       <head>
@@ -32,14 +36,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <main>
+          <Layout>
+            <Outlet />
+          </Layout>
+        </main>
         <ScrollRestoration />
         <Scripts />
+        <div className={isInnerPage ? 'background inner-background' : 'background'}>
+          <div style={backgroundImageStyle} className="background__image" />
+          <div className="background__grid"></div>
+          <div className="background__blur-xl"></div>
+        </div>
       </body>
     </html>
   );
 }
 
-export default function App() {
-  return <Outlet />;
-}
+export default RootLayout;

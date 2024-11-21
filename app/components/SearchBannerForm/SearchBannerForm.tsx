@@ -1,8 +1,9 @@
 import React from 'react';
 import './SearchBannerForm.scss';
 import Typewriter from '../TypeWritter/TypeWritter';
-import { SearchIcon } from '../icons';
 import { useNavigate } from '@remix-run/react';
+import { slugify } from '~/utlis/slugify';
+import { SearchIcon } from '../icons';
 
 const SearchBannerForm = ({ suggestions }) => {
   const [search, setSearch] = React.useState("");
@@ -31,11 +32,12 @@ const SearchBannerForm = ({ suggestions }) => {
     }
   };
 
-  const selectOption = (index) => {
-    setSearch(index);
+  const selectOption = (value) => {
+    setSearch(value);
     setVisibility(false);
+    const slug = slugify(value);
     // Navigate to a new page with the selected search item as a query or route parameter
-    navigate(`/search/${encodeURIComponent(index)}`);
+    navigate(`/search/${slug}`);
   };
 
   const hideSuggestions = () => {
