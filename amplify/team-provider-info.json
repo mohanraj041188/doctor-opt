@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-docopt-dev-3e76d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::339712866722:role/amplify-docopt-dev-3e76d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::339712866722:role/amplify-docopt-dev-3e76d-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-docopt-dev-3e76d-deployment",
+      "UnauthRoleName": "amplify-docopt-dev-3e76d-unauthRole",
+      "StackName": "amplify-docopt-dev-3e76d",
+      "StackId": "arn:aws:cloudformation:us-east-1:339712866722:stack/amplify-docopt-dev-3e76d/1cadfa30-ac36-11ef-ac79-0affedc2ba8d",
+      "AmplifyAppId": "d2kqe8iqljsz6g"
+    },
+    "categories": {
+      "function": {
+        "docAWSAmp": {
+          "deploymentBucketName": "amplify-docopt-dev-3e76d-deployment",
+          "s3Key": "amplify-builds/docAWSAmp-7156316c394856625648-build.zip"
+        }
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}

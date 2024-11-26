@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron&display=swap");
-@import "./colorVaiable.scss";
+@import url(./colorVaiable.scss);
 
 ::-moz-selection {
   background: var(--clr-txt-highlight);
