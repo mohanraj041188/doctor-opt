@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Links,
   Meta,
@@ -7,9 +6,10 @@ import {
   ScrollRestoration,
   useLocation,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { json, LinksFunction } from "@remix-run/node";
+import { getUserSession } from "./utlis/session.server";
 import BackgroundImage from "./asserts/hospital-corridor.jpg";
-import InnerPageBackgroundImage from "./asserts/pageBackground.jpg";
+import InnerPageBackgroundImage from "./asserts/page2Background.png";
 
 import "./styles/index.scss";
 import Layout from "./components/Layout";
@@ -26,6 +26,14 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+
+export async function loader({ request }: LoaderArgs) {
+  const user = await getUserSession(request); // Fetch user session
+  return {
+    isLoggedIn: !!user,
+    username: user?.name || null,
+  };
+}
 
 function RootLayout() {
   const location = useLocation();
