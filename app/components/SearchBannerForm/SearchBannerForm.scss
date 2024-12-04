@@ -7,7 +7,7 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   max-width: 100%;
-  flex: 1 0 auto;
+  grid-area: 1 / 1 / 2 / 2;
 
   &__auto--complete {
     position: relative;
@@ -16,8 +16,6 @@
     margin: 0;
     justify-content: center;
     pointer-events: auto;
-    min-width: 50svw;
-    max-width: 550px;
 
     @media screen and (max-width: 767px) {
       min-width: 90svw;
@@ -87,7 +85,7 @@
     text-align: left;
     transition: 0.3s ease;
     z-index: 2;
-    margin-top: 16px;
+    margin-top: 6px;
     backdrop-filter: blur(var(--space-base));
     -webkit-backdrop-filter: blur(var(--space-base));
     max-height: 250px;
@@ -99,10 +97,35 @@
 
     &--list {
       list-style: none;
-      padding: 0 30px;
+      padding: 10px 12px;
 
       &_item {
         padding: 4px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+
+        &__media {
+          width: 25px;
+          height: 25px;
+
+          &_icon {
+            opacity: .33;
+          }
+        }
+
+        &__content {
+          vertical-align: middle;
+
+          &_text {
+            font-size: 12px;
+            color: #787887;
+            text-transform: capitalize;
+          }
+        }
       }
     }
   }

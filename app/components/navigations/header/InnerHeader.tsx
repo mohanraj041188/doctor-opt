@@ -123,6 +123,7 @@ export default function HeaderComponent() {
         }
         </div>
       </div>
+      {!isLoggedIn ? (
       <div className={`modal-overlay ${showModal ? "show" : ""}`}>
         <PopupModal onClose={handleModalClose}>
           <>
@@ -172,7 +173,7 @@ export default function HeaderComponent() {
             </div>
           </>
         </PopupModal>
-      </div>
+      </div>) : (<></>)}
     </>
   );
 }
