@@ -1,4 +1,4 @@
-`// https://heroicons.com/
+// https://heroicons.com/
 export function MenuIcon({ className }: { className: string }) {
   return (
     <svg
