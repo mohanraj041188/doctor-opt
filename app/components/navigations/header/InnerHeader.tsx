@@ -1,4 +1,4 @@
-import { Link, useActionData } from "@remix-run/react";
+import { Link, useActionData, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import "./InnerHeader.scss";
 
@@ -24,6 +24,7 @@ const navLinks = [
 ];
 
 export default function HeaderComponent() {
+  const { isLoggedIn, username } = useLoaderData<typeof loader>();
   const [showModal, setShowModal] = useState(false);
   const [showSignup, setSignup] = useState(false);
   const actionData = useActionData();
@@ -77,7 +78,19 @@ export default function HeaderComponent() {
           </ul>
         </div>
         <div className="header__navigations">
-          {navLinks.map((item, index) =>
+        {isLoggedIn ? (
+            <>
+              <Link
+                to="/my-account"
+                className="header__navigations--items"
+              >
+                Welcome, {username}!
+              </Link>
+              <form action="/logout" method="post">
+                <button type="submit" className="header__navigations--items header__navigations--items-button">Logout</button>
+              </form>
+            </>
+          ) : (navLinks.map((item, index) =>
             item.isModal ? (
               <button
                 onClick={() => handleModalOpen(item.methodType)}
@@ -105,9 +118,12 @@ export default function HeaderComponent() {
                 </span>
               </Link>
             ),
-          )}
+          )
+          )
+        }
         </div>
       </div>
+      {!isLoggedIn ? (
       <div className={`modal-overlay ${showModal ? "show" : ""}`}>
         <PopupModal onClose={handleModalClose}>
           <>
@@ -157,7 +173,7 @@ export default function HeaderComponent() {
             </div>
           </>
         </PopupModal>
-      </div>
+      </div>) : (<></>)}
     </>
   );
 }

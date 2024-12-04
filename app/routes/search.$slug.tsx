@@ -1,22 +1,31 @@
-import { useParams } from "@remix-run/react";
+import { useParams, useLoaderData } from "@remix-run/react";
+import type { MetaFunction, json, LoaderFunction } from "@remix-run/node";
+import DoctorOverview from "~/components/Overview/Overview";
 
-export async function loader({ params }: { params: any }) {
+export const loader: LoaderFunction = async ({ params }) => {
+  const { symbol } = params;
+  // const response = await fetch(`https://api.example.com/stocks/${symbol}`);
+  // const data = await response.json();
   const { slug } = params;
-
-  // If needed, map the slug back to the original text
   const originalText = slug.replace(/-/g, " ");
-
-  // Fetch related data based on `originalText`
   return { slug, originalText };
 }
 
+export const meta: MetaFunction = () => {
+  const { slug } = useParams();
+  return [
+    { title: `Best ${slug.replace(/-/g, " ")} In Chennai - Instant Appointment Booking, View Fees, Feedbacks | DocOct` },
+    { name: "description", content: `Best ${slug.replace(/-/g, " ")} in Chennai. Book Doctor&#x27;s Appointment Online, View Fees, User feedbacks, Address &amp; Phone Numbers of ${slug.replace(/-/g, " ")} in Chennai | DocOct` },
+  ];
+};
+
 export default function SearchResult() {
   const { slug } = useParams();
+  const stockData = useLoaderData();
 
   return (
-    <div className="search-results">
-      <h2>Results for {slug.replace(/-/g, " ")}</h2>
-      {/* Render search result details here */}
-    </div>
+    <>
+      <DoctorOverview name={slug.replace(/-/g, " ")} />
+    </>
   );
 }

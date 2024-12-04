@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
           <HeaderComponent />
         )}
       </header>
-      <div className="layout">{children}</div>
+      <div className={isInnerPage ? "layout inner-layout" : "layout"}>{children}</div>
       <Footer />
     </div>
   );

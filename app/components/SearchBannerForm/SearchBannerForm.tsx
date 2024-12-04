@@ -6,11 +6,11 @@ import { slugify } from "~/utlis/slugify";
 import { SearchIcon } from "../icons";
 
 const SearchBannerForm = ({ suggestions }) => {
-  const [search, setSearch] = React.useState("");
+  const [search, setSearch] = React.useState('');
   const [visible, setVisibility] = React.useState(false);
   const [animateSearch, setAnimeSearch] = React.useState(false);
   const [hideTyping, setHideTyping] = React.useState(false);
-  const navigate = useNavigate(); // Import and initialize useNavigate
+  const navigate = useNavigate();
 
   const searchSuggestText = [
     "Search by doctor name ...",
@@ -19,7 +19,7 @@ const SearchBannerForm = ({ suggestions }) => {
     "Search for speciality ...",
   ];
 
-  const handleSearch = (event) => {
+  const handleSearch = (event: { target: { value: any[]; blur: () => void; }; }) => {
     setVisibility(true);
     setSearch(event.target.value);
     if (event.target.value.length > 0) {
@@ -88,19 +88,21 @@ const SearchBannerForm = ({ suggestions }) => {
         </div>
         {visible && (
           <div className="search__suggestions">
-            <ul className="search__suggestions--list">
+            <div className="search__suggestions--list">
               {suggestions
-                .filter((i) => i.toLowerCase().includes(search.toLowerCase()))
-                .map((i, v) => (
-                  <li
-                    className="search__suggestions--list_item"
-                    key={v}
-                    onClick={() => selectOption(i)}
-                  >
-                    {i}
-                  </li>
-                ))}
-            </ul>
+                .filter((item: string) => item.toLowerCase().includes(search.toLowerCase()))
+                .map((item: string, index: number) => (
+                  <div className="search__suggestions--list_item" key={index} onClick={() => selectOption(item)}>
+                    <div className="search__suggestions--list_item__media">
+                      <SearchIcon className="search__suggestions--list_item__media_icon"/>
+                    </div>
+                    <span className="search__suggestions--list_item__content">
+                      <div className="search__suggestions--list_item__content__title">{item}</div>
+                    </span>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         )}
       </div>

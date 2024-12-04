@@ -3,6 +3,7 @@ import "./SearchBanner.scss";
 import { SearchIcon } from "../icons";
 import Typewriter from "../TypeWritter/TypeWritter";
 import AnimatedNumber from "../AnimatedNumber/AnimatedNumber";
+import LocationSelector from "../LocationSelector/LocationSelector";
 
 const specialty = [
   "Allergist",
@@ -31,6 +32,19 @@ const specialty = [
   "Stomatology",
   "Urology",
   "Venereology",
+];
+
+const locations = [
+  { "area": "Porur","location": "chennai"},
+  { "area": "Mylapore","location": "chennai"},
+  { "area": "Chromepet","location": "chennai"},
+  { "area": "Nungambakkam","location": "chennai"},
+  { "area": "T Nagar","location": "chennai"},
+  { "area": "Adyar","location": "chennai"},
+  { "area": "Greams Road","location": "chennai"},
+  { "area": "Velachery","location": "chennai"},
+  { "area": "Kilpauk","location": "chennai"},
+  { "area": "Anna Nagar","location": "chennai"}
 ];
 
 const suggestions = [
@@ -107,7 +121,10 @@ function SearchBanner() {
       <p className="search-banner__intro-description">
         Introducing the world&apos;s best search engine for Appointments.
       </p>
-      <SearchBannerForm suggestions={suggestions} />
+      <div className="search-banner__fields">
+        <SearchBannerForm suggestions={suggestions} />
+        <LocationSelector suggestions={locations} />
+      </div>
       <div className="search-banner__note">
         <SearchIcon className="search-banner__note--icon"></SearchIcon>
         <p className="search-banner__note--text">
