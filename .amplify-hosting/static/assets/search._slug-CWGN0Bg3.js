@@ -1,0 +1,1 @@
+import{u as r,j as s}from"./index-18G_WLPD.js";function t(){const{slug:e}=r();return s.jsx("div",{className:"search-results",children:s.jsxs("h2",{children:["Results for ",e.replace(/-/g," ")]})})}export{t as default};
