@@ -9,7 +9,7 @@ import {
 import type { json, LinksFunction } from "@remix-run/node";
 import { getUserSession } from "./utlis/session.server";
 import BackgroundImage from "./asserts/hospital-corridor.jpg";
-import InnerPageBackgroundImage from "./asserts/page2Background.png";
+import InnerPageBackgroundImage from "./asserts/page2background.png";
 
 import "./styles/index.scss";
 import Layout from "./components/Layout";
