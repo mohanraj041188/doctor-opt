@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/mohanraj041188/doctor-opt/actions/workflows/node.js.yml/badge.svg)](https://github.com/mohanraj041188/doctor-opt/actions/workflows/node.js.yml)
+
 # Welcome to Remix!
 
 - 📖 [Remix docs](https://remix.run/docs)
